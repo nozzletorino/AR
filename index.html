@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articula 3D Model Preview</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      /* Aggiungi uno sfondo piacevole */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Layout della pagina */
+      .container {
+        width: 80%;
+        max-width: 1200px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      /* Modifica l'aspetto del model-viewer */
+      model-viewer {
+        width: 100%;
+        height: 600px;  /* Altezza fissa per una visualizzazione ottimale */
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Centrare la pagina */
+      .content {
+        padding: 20px;
+      }
+
+      /* Responsività per schermi più piccoli */
+      @media (max-width: 768px) {
+        model-viewer {
+          height: 400px;
+        }
+      }
+
+    </style>
   </head>
   <body>
-    <h1>3D Model in AR</h1>
-    <model-viewer 
-      src="https://nozzletorino.github.io/AR/AR3.glb" 
-      alt="3D model"
-      ar
-      ar-modes="scene-viewer quick-look"
-      camera-controls
-      environment-image="neutral"
-      shadow-intensity="1">
-    </model-viewer>
+    <div class="container">
+      <h1>Articula 3D Model Preview</h1>
+      <div class="content">
+        <model-viewer 
+          src="https://nozzletorino.github.io/AR/AR3.glb" 
+          alt="3D model"
+          ar
+          ar-modes="scene-viewer quick-look"
+          camera-controls
+          environment-image="neutral"
+          shadow-intensity="1">
+        </model-viewer>
+      </div>
+    </div>
   </body>
 </html>
